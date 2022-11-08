@@ -33,7 +33,8 @@ class _LoginPageState extends State<LoginPage> {
               id(),
               password(),
               // SizedBox(height: 50),
-              button(),
+              login_button(),
+              sign_up_button(),
             ],
           ),
         )
@@ -82,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
     ),
   );
-  Widget button() => Container(
+  Widget login_button() => Container(
     margin: EdgeInsets.only(top: 75),
     height: 53,
     child: ElevatedButton(
@@ -102,8 +103,25 @@ class _LoginPageState extends State<LoginPage> {
       ),
     ),
   );
-  Widget text_btn() => Container(
-
+  Widget sign_up_button() => Container(
+    margin: EdgeInsets.only(top: 20),
+    height: 53,
+    child: ElevatedButton(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(
+          Color(0xFF2C75F5),
+        ),
+      ),
+      onPressed: onClick(),
+      child: Text(
+        "회원가입",
+        style: TextStyle(
+          fontSize: 14,
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ),
   );
 
   @override

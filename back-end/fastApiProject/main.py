@@ -6,7 +6,11 @@ from utils import *
 
 app = FastAPI()
 
+<<<<<<< HEAD:back-end/fastApiProject/main.py
+engine = db.create_engine('sqlite:///../../database/login')
+=======
 engine = db.create_engine('sqlite:///login')
+>>>>>>> e2fcc3d2bc5e0a800eeb64b3e77c451ff5f3d83c:back-end/main.py
 metadata = db.MetaData()
 connection = engine.connect()
 table = db.Table('login', metadata, autoload=True, autoload_with=engine)
