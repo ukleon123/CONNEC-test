@@ -20,11 +20,13 @@ CREATE TABLE IF NOT EXISTS "requested_relation" (
 	FOREIGN KEY("user_id") REFERENCES "user"("user_id")
 );
 CREATE TABLE IF NOT EXISTS "login" (
-	"user_email"	TEXT NOT NULL UNIQUE,
+	"user_id"	TEXT NOT NULL UNIQUE,
+    "user_email"	TEXT NOT NULL UNIQUE,
 	"user_password"	TEXT NOT NULL,
 	"user_authority"	TEXT NOT NULL,
 	"social_code"	INTEGER,
-	PRIMARY KEY("user_email")
+	PRIMARY KEY("user_id"),
+	FOREIGN KEY("user_id") REFERENCES "user"("user_id")
 );
 CREATE TABLE IF NOT EXISTS "relation" (
 	"relation_id"	INTEGER NOT NULL UNIQUE,
