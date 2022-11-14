@@ -3,6 +3,7 @@ import os
 from passlib.context import CryptContext
 
 import os
+from uuid import uuid4
 from typing import Union, Any
 from datetime import datetime, timedelta
 
@@ -15,6 +16,10 @@ RefreshTokenExpireMinutes = 30
 
 SecretAccessKey = os.environ['JWT_ACCESS_SECRET_KEY']
 SecretRefreshKey = os.environ['JWT_REFRESH_SECRET_KEY']
+
+
+def generate_user_id() -> str:
+    return uuid4().__str__()
 
 
 def get_hashed_password(password: str) -> str:
